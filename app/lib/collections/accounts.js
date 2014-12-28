@@ -1,3 +1,2 @@
-/**
- * Created by dev on 28/12/14.
- */
+Accounts = new Mongo.Collection('accounts');
+
