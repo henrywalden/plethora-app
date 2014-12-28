@@ -1,5 +1,7 @@
 css / styl /less files
 
+    globals.css
+Global css classes to add to html tags
 
     base.css
 Base styles include setting heading sizes, default link styles, default font styles, and body backgrounds

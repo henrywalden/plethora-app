@@ -1,5 +1,36 @@
 
 /*splash page user sign up*/
 #splash-page {
+    background-image: url('/images/library.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 900px;
+
+    padding-top:300px;
+}
+
+/*splash page content overlay*/
+.splash-container {
+    background-color: rgba(0,0,0,0.7);
+    padding-bottom: 30px;
+}
+
+/*splash page h3*/
+.splash-container h3 {
+    font-style: italic;
+}
+
+/*splash page button styles*/
+.signup-button {
+    background: -webkit-linear-gradient(top, #48b512 0, #3d990f 100%);
+    background: linear-gradient(top, #48b512 0, #3d990f 100%);
+}
+
+.signin-button {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.splash-subheading {
 
 }
