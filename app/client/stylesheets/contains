@@ -1,1 +1,22 @@
 css / styl /less files
+
+
+    base.css
+Base styles include setting heading sizes, default link styles, default font styles, and body backgrounds
+
+    layout.css
+Major layout styles such as header and footer are traditionally styled using ID selectors but take the time
+to think about the elements that are common across all components of the page and use class selectors where appropriate.
+
+    module.css
+Modules sit inside Layout components. Modules can sometimes sit within other Modules, too. Each Module should be
+designed to exist as a standalone component.
+
+    state.css
+A state is something that augments and overrides all other styles. For example, an accordion section may be in a
+collapsed or expanded state. A message may be in a success or error state.
+
+    theme.css
+Themes can affect any of the primary types. It could override base styles like default link colours. It could change
+module elements such as chrome colours and borders. It could affect layout with different arrangements. It could also
+alter how states look.
