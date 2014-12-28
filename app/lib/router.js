@@ -1,3 +1,3 @@
-/**
- * Created by dev on 28/12/14.
- */
+//splash page routing
+Router.route('/', {name: 'home'});
+
