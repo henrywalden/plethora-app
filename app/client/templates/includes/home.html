@@ -1,10 +1,63 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+<template name="home">
+    <!--splash page-->
+    <div id="splash-page">
+        <div class="container-fluid text-center splash-container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Welcome to Plethora</h1>
+                    <h4 class="splash-subheading">Manage your reading list</h4>
+                </div>
+            </div>
 
-</body>
-</html>
+            <div class="row">
+                <div class="col-md-12">
+                    <button class="signup-button" data-toggle="modal" data-target="#signup-modal">Sign Up It's Free</button>
+                    <p>or</p>
+                    <span class="signin-button" data-toggle="modal" data-target="#signin-modal">Log In</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end splash page-->
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="signup-modal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Sign Up</h4>
+                </div>
+                <div class="modal-body">
+                    {{> signupForm}}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end Modal-->
+
+    <!-- Modal -->
+    <div class="modal fade" id="signin-modal" tabindex="-1" role="dialog" aria-labelledby="signin-modal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Log In</h4>
+                </div>
+                <div class="modal-body">
+                    {{>loginForm}}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end Modal-->
+</template>

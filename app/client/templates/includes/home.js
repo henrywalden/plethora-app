@@ -1,3 +1,5 @@
-/**
- * Created by dev on 28/12/14.
- */
+//Template.home.events({
+//    'click .signup-button' : function() {
+//
+//    }
+//});
