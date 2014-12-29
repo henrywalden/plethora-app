@@ -1,12 +1,5 @@
 <template name="signupForm">
-    <form class="main form">
-        <div class="form-group {{errorClass 'name'}}">
-            <label class="control-label" for="name">Name</label>
-            <div class="controls">
-                <input name="name" id="name" type="text" value="{{name}}" placeholder="ie. Cool Ranch" class="form-control"/>
-                <span class="help-block">{{errorMessage 'name'}}</span>
-            </div>
-        </div>
+    <form class="main form" id ="signin-form">
         <div class="form-group {{errorClass 'email'}}">
             <label class="control-label" for="email">Email</label>
             <div class="controls">
@@ -26,7 +19,7 @@
         <div class="form-group {{errorClass 'verify'}}">
             <label class="control-label" for="verify">Verify your password</label>
             <div class="controls">
-                <input name="verify" id="verify" type="password" value="{{verify}}" placeholder="Please renter your password" class="form-control"/>
+                <input name="verify" id="verify" type="password" value="{{verify}}" placeholder="Renter your password" class="form-control"/>
                 <span class="help-block">{{errorMessage 'verify'}}</span>
             </div>
         </div>
