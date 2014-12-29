@@ -41,6 +41,9 @@ areValidPasswords = function(password, confirm) {
 //validation of post within the post object to return missing title or url field
 validate = function(loginFields){
     var errors = {};
+    if(!loginFields.username) {
+        errors.username = "Please fill in your name"
+    }
     if(!loginFields.email) {
         errors.email = "Please fill in your email"
     }

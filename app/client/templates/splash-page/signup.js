@@ -19,12 +19,14 @@ Template.signupForm.events({
         e.preventDefault();
 
         var signInForm = $(e.currentTarget),
+            username = signInForm.find('#name').val().toLowerCase(),
             email = trimInput(signInForm.find('#email').val().toLowerCase()),
             password = signInForm.find('#password').val(),
             passwordConfirm = signInForm.find('#verify').val()
             ,
             //to set out session errors
             loginFields = {
+                username: username,
                 email : email,
                 password: password,
                 verify: passwordConfirm
@@ -35,7 +37,7 @@ Template.signupForm.events({
 
         console.log(loginFields);
         console.log(errors);
-        if(errors.email || errors.password || errors.verify){
+        if(errors.username || errors.email || errors.password || errors.verify){
             return Session.set('signUpErrors', errors);
         }
 
@@ -44,7 +46,7 @@ Template.signupForm.events({
             return Session.set('signUpErrors', errors);
         }
         if (isNotEmpty(email) && isNotEmpty(password) && isEmail(email) && areValidPasswords(password, passwordConfirm)) {
-            Accounts.createUser({email: email, password: password}, function(err) {
+            Accounts.createUser({username: username, email: email, password: password}, function(err) {
                 if (err) {
                     if (err.message === 'Email already exists. [403]') {
                         console.log('We are sorry but this email is already used.');
