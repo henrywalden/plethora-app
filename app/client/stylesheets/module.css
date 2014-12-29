@@ -26,11 +26,12 @@
     background: linear-gradient(top, #48b512 0, #3d990f 100%);
 }
 
-.signin-button {
+.login-button {
     text-decoration: underline;
     cursor: pointer;
 }
 
 .splash-subheading {
+    font-style: italic;
 
 }
