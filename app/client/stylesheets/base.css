@@ -11,3 +11,11 @@ button {
     border: 0;
     outline: none;
 }
+
+a {
+    color: #D3C67E;
+}
+
+a:hover {
+    color: #D3C67E;
+}
