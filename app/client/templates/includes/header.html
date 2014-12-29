@@ -1,0 +1,45 @@
+<template name="header">
+    <div id="header">
+        <a class="header-logo js-home-via-logo" href="/" title="Go back to your boards page.">
+            <span class="header-logo-loading"></span>
+            <span class="header-logo-default"></span>
+        </a>
+        <div class="header-boards-button">
+            <a class="header-btn header-boards js-boards-menu" title="View list of boards" href="#">
+                <span class="header-btn-icon icon-lg icon-board light"></span>
+                <span class="header-btn-text">Boards</span>
+            </a>
+        </div>
+        <div>
+            <a href="#" class="header-btn open-search-btn js-open-search-page" title="Search for boards, cards, members, and organizations.">
+                <span class="header-btn-icon icon-lg icon-search light"></span>
+            </a>
+            <div class="header-search">
+                <input class="header-search-input js-search-input js-disable-on-dialog" type="text" autocomplete="off" autocorrect="off" spellcheck="false" value="">
+                <span class="header-search-icon icon-lg icon-search light js-search-icon js-search-focus"></span>
+                <span class="header-search-icon header-search-icon-close icon-lg icon-close light hide js-close-icon js-search-close"></span>
+                <a href="#" class="header-search-icon header-search-icon-open icon-lg icon-open light hide js-open-button js-open-search-page"></a>
+            </div>
+        </div>
+
+        <div class="header-user">
+            <a class="header-btn header-btn-feedback js-open-feedback hide" title="Hello developer! Welcome to Plethora!" href="#">
+                <span class="header-btn-icon icon-lg icon-comment light"></span>  <span class="header-btn-text">Give us feedback.</span>
+            </a>
+            <a class="header-btn hide upgrade" href="#" onclick="window.location.reload();">
+                <span class="icon-sm icon-reopen light"></span>
+                <span class="header-btn-text">Update Available</span>
+            </a>
+            <a class="header-btn js-open-add-menu" href="#" title="Add a new board or organization.">
+                <span class="header-btn-icon icon-lg icon-add light"></span>
+            </a>
+            <a class="header-btn header-member js-open-header-member-menu" href="#" title="Get access to your profile, help, and log out.">
+                <span class="header-btn-text js-member-name">Hello {{username}}</span>
+            </a>
+            <a class="header-btn header-notifications js-open-header-notifications-menu" href="#" title="Click to view notifications.">
+                <span class="header-btn-icon icon-lg icon-notification light"></span>
+            </a>
+        </div>
+    </div>
+
+</template>
