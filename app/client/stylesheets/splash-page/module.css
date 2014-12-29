@@ -20,6 +20,11 @@
     font-style: italic;
 }
 
+/*splash page subheader*/
+.splash-subheading {
+    font-style: italic;
+}
+
 /*splash page button styles*/
 .signup-button {
     background: -webkit-linear-gradient(top, #48b512 0, #3d990f 100%);
@@ -29,9 +34,4 @@
 .login-button {
     text-decoration: underline;
     cursor: pointer;
-}
-
-.splash-subheading {
-    font-style: italic;
-
 }
