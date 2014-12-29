@@ -37,3 +37,19 @@ areValidPasswords = function(password, confirm) {
     }
     return true;
 };
+
+//validation of post within the post object to return missing title or url field
+validate = function(loginFields){
+    var errors = {};
+    if(!loginFields.email) {
+        errors.email = "Please fill in your email"
+    }
+    if(!loginFields.password) {
+        errors.password = "Please fill in a password 6 characters or more"
+    }
+    if(!loginFields.verify) {
+        errors.verify = "Please verify your password"
+    }
+
+    return errors;
+};
