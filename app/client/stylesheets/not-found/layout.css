@@ -1,0 +1,11 @@
+.jumbotron{
+    text-align: center;
+}
+.jumbotron h2{
+    font-size: 60px;
+    font-weight: 100;
+}
+.jumbotron h3, .jumbotron em{
+    font-weight: 200;
+    font-size: 26px;
+}
