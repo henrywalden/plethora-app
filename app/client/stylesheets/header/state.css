@@ -1,0 +1,7 @@
+/*header search active and focus states*/
+input:focus, textarea:focus, keygen:focus, select:focus {
+    outline-offset: -2px;
+}
+:focus {
+    outline: #D3C67E auto 5px;
+}

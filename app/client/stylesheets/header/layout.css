@@ -1,4 +1,22 @@
-/*header container layout*/
+/*----------------------
+header container layout
+----------------------*/
+#header {
+    background: rgba(0,0,0,.15);
+    height: 40px;
+    overflow: hidden;
+    padding: 5px;
+    position: relative;
+    z-index: 10;
+}
+
+/*-----------
+header user layout buttons
+----------*/
+.header-user {
+    position: absolute;
+    top: 5px;
+    right: 0;
+}
 
 
-/*header logo*/

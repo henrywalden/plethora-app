@@ -12,10 +12,7 @@ button {
     outline: none;
 }
 
-a {
+a, a:hover, a:focus, a:visited {
     color: #D3C67E;
-}
-
-a:hover {
-    color: #D3C67E;
+    text-decoration: none;
 }
