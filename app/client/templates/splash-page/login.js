@@ -51,7 +51,7 @@ Template.loginForm.events({
                 return Session.set('loginErrors', errors);
 
             } else {
-                //todo add router.go to user kanban board
+                //router.go to user kanban board
                 console.log('Welcome back Meteorite!');
                 Router.go('/welcome');
                 //refresh Session state
@@ -62,5 +62,9 @@ Template.loginForm.events({
 
         //keeps complier happy?
         return false;
+    },
+    'click #btn-forgot': function(e) {
+        e.preventDefault();
+        Router.go('/reset');
     }
 });
