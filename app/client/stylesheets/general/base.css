@@ -4,6 +4,8 @@
 body {
     font-family: Lato, "Helvetica Neue", Arial, monospace;
     color: #D3C67E;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /*button reset*/
