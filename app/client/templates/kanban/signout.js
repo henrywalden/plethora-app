@@ -5,8 +5,6 @@ Template.signOut.events({
         Meteor.logout(function() {
 
             setTimeout(Router.go('/'), 2000);
-
-            throwError("Bye! Have a beautiful day!");
         });
 
         return false;
