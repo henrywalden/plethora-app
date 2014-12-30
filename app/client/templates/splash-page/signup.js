@@ -51,13 +51,14 @@ Template.signupForm.events({
                     if (err.message === 'Email already exists. [403]') {
                         console.log('We are sorry but this email is already used.');
                         errors.email = 'We are sorry but this email is already used. Try another one.';
-                        return Session.set('signUpErrors', errors.email);
+                        return Session.set('signUpErrors', errors);
                     } else {
                         console.log('We are sorry but something went wrong.');
                         return throwError(err.message);
                     }
                 } else {
                     //todo route to kanban board
+                    Router.go('/welcome');
                     console.log('Congrats new Meteorite, you\'re in!');
 
                     //refresh Session state

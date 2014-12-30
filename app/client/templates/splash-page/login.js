@@ -43,12 +43,12 @@ Template.loginForm.events({
             if (err) {
                 errors.email = err.reason,
                 errors.password = err.reason;
-                return Session.set('loginErrors', error);
+                return Session.set('loginErrors', errors);
 
             } else {
                 //todo add router.go to user kanban board
                 console.log('Welcome back Meteorite!');
-
+                Router.go('/welcome');
                 //refresh Session state
                 return Session.set('loginErrors', {});
             }
