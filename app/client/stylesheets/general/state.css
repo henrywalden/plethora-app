@@ -33,3 +33,12 @@
     margin-bottom: 5px;
     pointer-events: auto;
 }
+
+/*bootstrap reset*/
+:focus {
+    outline: none;
+}
+
+.btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn.active.focus {
+    outline: none;
+}

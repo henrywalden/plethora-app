@@ -35,3 +35,17 @@
     text-decoration: underline;
     cursor: pointer;
 }
+
+
+/*primary buttons*/
+.btn-primary {
+    color: #777272;
+    background-color: #D3C67E;
+    border-color: transparent;
+}
+
+
+/*forgot button*/
+.btn-forgot {
+    background-color: #6E6E6E;
+}

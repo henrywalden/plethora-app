@@ -10,3 +10,17 @@
         /*min-height: 500px;*/
     /*}*/
 /*}*/
+
+/*primary button state*/
+.btn-primary:hover, .btn-primary:focus, .btn-primary.focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    color: #777272;
+    background-color: #E0C94A;
+    border-color: transparent;
+    transition: 300ms ease-in;
+}
+/*forgot button*/
+.btn-forgot:hover, .btn-forgot:active, .btn-forgot:focus {
+    color: rgba(255, 213, 2, 0.59);
+    transition: 300ms ease-in;
+    background: #333333;
+}
