@@ -1,0 +1,19 @@
+#forgotPasswordForm, #resetPasswordForm, .return-home {
+    text-align: center;
+    padding-top: 20px;
+
+}
+
+.reset-title {
+    text-align: center;
+    padding-top: 200px;
+}
+
+#background .row {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+.return-home {
+    padding-bottom: 700px;
+}

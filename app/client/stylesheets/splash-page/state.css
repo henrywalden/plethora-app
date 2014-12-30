@@ -14,7 +14,7 @@
 /*primary button state*/
 .btn-primary:hover, .btn-primary:focus, .btn-primary.focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
     color: #777272;
-    background-color: #E0C94A;
+    background-color: #D3C67E;
     border-color: transparent;
     transition: 300ms ease-in;
 }
