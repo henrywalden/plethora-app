@@ -41,8 +41,13 @@ Template.loginForm.events({
 
         Meteor.loginWithPassword(email, password, function(err) {
             if (err) {
-                errors.email = err.reason,
-                errors.password = err.reason;
+                if (err.reason === "User not found") {
+                    errors.email = err.reason;
+                    errors.password = "Please try again";
+                } else {
+                    errors.password = err.reason;
+                }
+
                 return Session.set('loginErrors', errors);
 
             } else {
