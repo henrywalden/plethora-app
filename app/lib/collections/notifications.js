@@ -1,3 +1,2 @@
-/**
- * Created by dev on 30/12/14.
- */
+/*Notifications collection*/
+Notifications = new Mongo.Collection('notifications');
