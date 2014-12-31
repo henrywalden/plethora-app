@@ -52,7 +52,7 @@ header buttons
     background: rgba(255,255,255,.3);
     background: -webkit-linear-gradient(top,rgba(255,255,255,.3) 0,rgba(255,255,255,.2) 100%);
     background: linear-gradient(to bottom,rgba(255,255,255,.3) 0,rgba(255,255,255,.2) 100%);
-    color: #f3f3f3;
+    color: #D3C67E;
     display: block;
     float: left;
     font-weight: 700;
@@ -80,6 +80,80 @@ header buttons
     font-size: 20px;
     line-height: 30px;
     width: 30px;
+}
+
+/*----------
+header dropdown menu(popovers)
+---------------*/
+.dropdown-menu {
+    min-width: 300px;
+    right:0;
+
+    /*reset*/
+    left: inherit;
+}
+.pop-over {
+    background: #fff;
+    border-radius: 3px;
+    border: 1px solid #dbdbdb;
+    border-bottom-color: #c2c2c2;
+    -webkit-box-shadow: 0 1px 6px rgba(0,0,0,.15);
+    box-shadow: 0 1px 6px rgba(0,0,0,.15);
+    width: 300px;
+    z-index: 99999;
+}
+
+.pop-over .header {
+    height: 36px;
+    position: relative;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.pop-over .header .back-btn {
+    display: none;
+    padding: 10px 4px 10px 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.pop-over .header .header-title {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    line-height: 36px;
+    border-bottom: 1px solid #dcdcdc;
+    margin: 0 10px;
+    overflow: hidden;
+    padding: 0 32px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.pop-over .header .close-btn {
+    padding: 10px 10px 10px 4px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.pop-over .content {
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0 10px 10px;
+}
+
+.pop-over .content {
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0 10px 10px;
+}
+
+.pop-over input[type="text"], .pop-over input[type="email"], .pop-over input[type="password"] {
+    margin: 4px 0 12px;
+    width: 100%;
 }
 
 

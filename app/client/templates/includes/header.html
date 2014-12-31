@@ -19,6 +19,35 @@
         </div>
 
         <div class="header-user">
+            <button type="button" class="header-btn dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Add a new board">
+                <i class="fa fa-plus"></i>
+                <span class="header-btn-icon icon-lg icon-add light"></span>
+            </button>
+            <div class="dropdown-menu" role="menu">
+                <div class="pop-over clearfix">
+                    <div class="header clearfix">
+                        <a class="back-btn js-back-view" href="#">
+                            <span class="icon-sm icon-leftarrow"></span>
+                        </a>
+                        <span class="header-title">Create Board</span>
+                        <a class="close-btn js-close-popover" href="#">
+                            <span class="icon-sm icon-close"></span>
+                        </a>
+                    </div>
+                    <div class="content clearfix fancy-scrollbar js-tab-parent">
+                        <div class="content clearfix fancy-scrollbar js-tab-parent">
+                            <form id="CreateBoardForm">
+                                <label for="boardNewTitle">Title</label>
+                                <input id="boardNewTitle" type="text" name="name" class="non-empty js-autofocus" placeholder="I <3 Trololol” for example…" autofocus="">
+                                <p class="quiet js-vis-display">
+                                    <span class="icon-sm icon-public"></span>This board will be <strong>public</strong>.</p>
+                                <input type="submit" class="btn-primary " value="Create">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <a class="header-btn header-member" href="#" title="Get access to your profile">
                 <span class="header-btn-text js-member-name">Hello {{username}}</span>
             </a>
