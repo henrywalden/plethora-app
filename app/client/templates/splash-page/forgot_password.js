@@ -1,9 +1,13 @@
 //forgot password
 Template.ForgotPassword.created = function(){
     Session.set('resetErrors', {});
+    Session.set('loadingSpinner', false)
 };
 
 Template.ForgotPassword.helpers({
+    loadingSpinner: function(spinner){
+        return Session.get('loadingSpinner')[spinner];
+    },
     errorMessage : function(field) {
         return Session.get('resetErrors')[field];
     },
@@ -22,12 +26,12 @@ Template.ForgotPassword.events({
 
         if (!isNotEmpty(email) || !isEmail(email)) {
             errors.email = "Please enter a valid email";
-//            console.log(errors.email);
             return Session.set('resetErrors', errors);
         }
 
         if (isNotEmpty(email) && isEmail(email)) {
             Accounts.forgotPassword({email: email}, function(err) {
+                Session.set('loadingSpinner', true);
                 if (err) {
                     if (err.message === 'User not found [403]') {
                         errors.email = err.message;
@@ -41,9 +45,11 @@ Template.ForgotPassword.events({
                         return Session.set('resetErrors', errors);
                     }
                 } else {
-                    
+
                     return throwError('Email Sent. Check your mailbox.');
                 }
+
+                Session.set('loadingSpinner', false);
             });
 
         }
@@ -52,13 +58,26 @@ Template.ForgotPassword.events({
 });
 
 if (Accounts._resetPasswordToken) {
+    console.log("Session is set");
     Session.set('resetPassword', Accounts._resetPasswordToken);
-    Router.go('/reset-password')
+    Router.go('/reset-password');
 }
+
+
+Template.ResetPassword.created = function(){
+    Session.set('resetErrors', {});
+};
+
 
 Template.ResetPassword.helpers({
     resetPassword: function(){
         return Session.get('resetPassword');
+    },
+    errorMessage : function(field) {
+        return Session.get('resetErrors')[field];
+    },
+    errorClass: function(field) {
+        return !!Session.get('resetErrors')[field] ? 'has-error' : '';
     }
 });
 
@@ -69,15 +88,18 @@ Template.ResetPassword.events({
         var resetPasswordForm = $(e.currentTarget),
             password = resetPasswordForm.find('#resetPasswordPassword').val(),
             verify = resetPasswordForm.find('#resetPasswordPasswordConfirm').val(), 
-            errors = {},
-            resetFields = {
-                password: password,
-                verify: verify
-            };
+            errors = {};
 
-        errors =  validate(resetFields);
+
         //check for empty field
-        if(errors) {
+        if(!isNotEmpty(password)) {
+            errors.password = "Your password should be 6 characters or longer";
+            return Session.set('resetErrors', errors);
+        }
+
+        //check matching passwords
+        if(!areValidPasswords(password, verify)) {
+            errors.password, errors.verify = "Your two passwords are not equivalent";
             return Session.set('resetErrors', errors);
         }
 
