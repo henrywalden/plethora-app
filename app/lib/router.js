@@ -16,12 +16,14 @@ Router.route('/', {
 //reset password - send email route
 Router.route('/reset', {
     layoutTemplate: 'Reset',
+    notFoundTemplate: 'notFound',
     name: 'ForgotPassword'
 });
 
 //reset password page route
 Router.route('/reset-password', {
     layoutTemplate: 'Reset',
+    notFoundTemplate: 'notFound',
     name: 'ResetPassword'
 });
 
