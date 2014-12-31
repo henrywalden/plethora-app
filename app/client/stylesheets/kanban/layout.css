@@ -1,0 +1,60 @@
+/*board layout*/
+.gutter {
+    margin-left: 38px;
+}
+.sidebar-boards-list, .board-list {
+     margin-bottom: 16px;
+}
+
+.board-list li {
+    float: left;
+    width: 25%;
+}
+
+.fa-group {
+    left: -38px;
+    position: absolute;
+    top: 35px;
+}
+
+.sidebar-boards-list li, .board-list li {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.board-list .details {
+    height: 84px;
+    padding-right: 36px;
+}
+.sidebar-boards-list .details, .board-list .details {
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    padding: 9px 12px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.board-list a {
+    background-color: #999;
+    color: #f6f6f6;
+    height: 90px;
+    margin: 0 16px 16px 0;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.sidebar-boards-list a, .board-list a {
+    background-size: cover;
+    background-position: center center;
+    border-radius: 3px;
+    display: block;
+    /* font-weight: 700; */
+    min-height: 18px;
+    padding: 8px 12px 8px 12px;
+    position: relative;
+    text-decoration: none;
+}

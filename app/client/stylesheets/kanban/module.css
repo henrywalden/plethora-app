@@ -1,0 +1,17 @@
+/*kanban title*/
+.window-module-title {
+    padding: 8px 0;
+    position: relative;
+    margin: 0 0 4px 38px;
+}
+
+/*individual board*/
+.board-list a {
+    background-color: #D3C67E;
+    color: #f6f6f6;
+    height: 90px;
+    margin: 0 16px 16px 0;
+    font-size: 16px;
+    line-height: 22px;
+}
+
