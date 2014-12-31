@@ -22,11 +22,11 @@ header logo
 }
 
 .header-logo-default {
-    background-image: url(images/plethora-logo.png);
+    background-image: url(images/plethora-logo-1a.png);
     /*background-position: top right;*/
     background-repeat: no-repeat;
     background-size: 80px 30px;
-    height: 25px;
+    height: 30px;
     position: absolute;
     right: 0;
     top: 0;
@@ -97,6 +97,22 @@ header search
     z-index: 1;
 }
 
+.header-search input[type="text"] {
+    background: rgba(255,255,255,0.5);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border: none;
+    float: left;
+    font-size: 13px;
+    height: 29px;
+    min-height: 29px;
+    line-height: 19px;
+    width: 160px;
+    margin: 0;
+}
+
 .fa-search {
     /*to flip maginfying glass*/
     -moz-transform: scaleX(-1);
@@ -104,7 +120,7 @@ header search
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
     margin-left: -20px;
-
+    margin-top: 8px;
 }
 
 /*--------------
