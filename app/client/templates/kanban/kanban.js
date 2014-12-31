@@ -1,3 +1,6 @@
-/**
- * Created by dev on 31/12/14.
- */
+//display individual kanban boards
+Template.kanban.helpers({
+    boards: function() {
+        return Boards.find();
+    }
+});
