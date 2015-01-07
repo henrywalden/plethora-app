@@ -1,3 +1,4 @@
-/**
- * Created by aspnet2 on 7/01/2015.
- */
+//user owns document
+ownsDocument = function(userId, doc){
+    return doc && doc.userId === userId;
+};
