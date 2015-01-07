@@ -14,33 +14,34 @@ Template.header.helpers({
     },
     showPopBoard : function() {
         return Session.get('showPopBoard');
+    },
+    showPopUser : function() {
+        return Session.get('showPopUser');
+    },
+    showPopNotifications : function() {
+        return Session.get('showPopNotifications');
     }
 });
 
-//on click of create new board, I want to add to the Boards collection the user's board!
+//header events
 Template.header.events({
-    'click .dropdown-toggle': function(e, tmpl) {
+    //to show dropdown create
+    'click #dropdown-create': function(e, tmpl) {
         //e.stopPropagation();
         e.preventDefault();
-
-
         Session.set('showPopBoard', true);
     },
-
-    'submit #create-board': function(e, tmpl) {
+    //to show dropdown user
+    'click #dropdown-user': function(e, tmpl) {
+        //e.stopPropagation();
         e.preventDefault();
-
-        var createBoard = $(e.currentTarget),
-            title = trimInput(createBoard.find('#boardNewTitle').val()),
-            error = validateBoard(title);
-
-
-        //display error if user enter empty field
-        if(error) {
-            return throwError(error.title);
-        }
-
-        Meteor.call('boardsInsert', title);
+        Session.set('showPopUser', true);
+    },
+    //to show dropdown user
+    'click #dropdown-notifications': function(e, tmpl) {
+        //e.stopPropagation();
+        e.preventDefault();
+        Session.set('showPopNotifications', true);
     },
 
     //on click of X button, set Session to null to prevent display
@@ -50,3 +51,5 @@ Template.header.events({
         Session.set('showPopNotifications', false)
     }
 });
+
+

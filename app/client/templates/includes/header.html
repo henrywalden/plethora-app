@@ -19,7 +19,7 @@
         </div>
 
         <div class="header-user">
-            <button type="button" class="header-btn dropdown-toggle" title="Add a new board">
+            <button type="button" class="header-btn dropdown-toggle" id="dropdown-create" title="Add a new board">
                 <i class="fa fa-plus"></i>
                 <span class="header-btn-icon icon-lg icon-add light"></span>
             </button>
@@ -28,14 +28,14 @@
                 {{> dropDownCreate}}
             {{/if}}
 
-            <a class="header-btn header-member" href="#" title="Get access to your profile">
+            <a class="header-btn header-member" id="dropdown-user" href="#" title="Get access to your profile">
                 <span class="header-btn-text js-member-name">Hello {{username}}</span>
             </a>
             {{#if showPopUser}}
                 {{> dropDownUser}}
             {{/if}}
 
-            <a class="header-btn header-notifications js-open-header-notifications-menu" href="#" title="Click to view notifications.">
+            <a class="header-btn header-notifications js-open-header-notifications-menu" id="dropdown-notifications" href="#" title="Click to view notifications.">
                 <i class="fa fa-bell-o ml-small"></i>
                 <span class="header-btn-icon icon-lg icon-notification light"></span>
             </a>
