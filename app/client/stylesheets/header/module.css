@@ -88,7 +88,8 @@ header dropdown menu(popovers)
 .dropdown-menu {
     min-width: 300px;
     right:0;
-
+    display: initial;
+    top: 125%;
     /*reset*/
     left: inherit;
 }
@@ -111,7 +112,6 @@ header dropdown menu(popovers)
 }
 
 .pop-over .header .back-btn {
-    display: none;
     padding: 10px 4px 10px 10px;
     position: absolute;
     top: 0;
