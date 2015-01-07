@@ -1,5 +1,5 @@
 <template name="dropDownCreate">
-    <div class="dropdown-menu pop-over clearfix">
+    <div class="dropdown-menu pop-over clearfix" id="dropdown-create-board">
         <div class="header clearfix">
             <a class="back-btn js-back-view" href="#">
                 <span class="icon-sm icon-leftarrow"></span>
@@ -14,10 +14,9 @@
             <div class="content clearfix fancy-scrollbar js-tab-parent">
                 <form id="CreateBoardForm">
                     <label for="boardNewTitle">Title</label>
-                    <input id="boardNewTitle" type="text" name="name" class="non-empty js-autofocus" placeholder="I <3 Boards for example…" autofocus="">
-                    <p class="quiet js-vis-display">
-                        <span class="icon-sm icon-public"></span>This board will be <strong>public</strong>.</p>
-                    <input type="submit" class="btn-primary" id="create-board" value="Create">
+                    <input id="boardNewTitle" type="text" name="name" placeholder="I <3 Boards for example…" autofocus="">
+                    <p>This board will be <strong>public</strong>.</p>
+                    <input type="submit" class="btn btn-primary" value="Create">
                 </form>
             </div>
         </div>
