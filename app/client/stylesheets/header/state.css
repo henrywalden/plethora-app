@@ -3,3 +3,10 @@
     background-color: rgba(255, 255, 255, 0.37);
     border-radius: 3px;
 }
+
+.pop-over input[type="text"], .pop-over input[type="email"], .pop-over input[type="password"] {
+    -webkit-transition: background 85ms ease-in, border-color 85ms ease-in;
+    -moz-transition: background 85ms ease-in, border-color 85ms ease-in;
+    -ms-transition: background 85ms ease-in, border-color 85ms ease-in;
+    transition: background 85ms ease-in, border-color 85ms ease-in;
+}
