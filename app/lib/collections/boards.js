@@ -5,21 +5,25 @@ Meteor.methods({
         //audit augment package
         check(title, String);
 
-
-        var user = Meteor.user();
-
         if (!title) {
             throw new Meteor.Error('invalid-title', 'You must add a title');
         }
 
         board = {
             boardName: title,
-            userId: user._id,
+            userId: Meteor.userId(),
             cards: [],
             created: new Date()
         };
 
-        Boards.insert(board);
+
+        //insert to Boards collection
+        var boardId = Boards.insert(board);
+
+        //return the _id to client
+        return {
+            _id: boardId
+        };
     }
 });
 

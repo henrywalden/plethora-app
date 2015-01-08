@@ -31,3 +31,17 @@ Router.route('/reset-password', {
 Router.route('/welcome/', {
     name: 'kanban'
 });
+
+
+//dynamic route to individual kanban according to id
+Router.route('/board/:_id', {
+    name: 'individualKanban',
+
+    //@todo add cards and event (indiv events)
+    //waitOn: function() {
+    //    return [Meteor.subscribe('cards', this.params._id), Meteor.subscribe('events', this.params._id)];
+    //},
+    data: function() {
+        return Boards.findOne(this.params._id);
+    }
+});
