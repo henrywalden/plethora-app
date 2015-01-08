@@ -1,21 +1,24 @@
 Boards = new Mongo.Collection('boards');
 
 Meteor.methods({
-    boardsInsert: function(title) {
+    boardsInsert: function(fields) {
         //audit augment package
-        check(title, String);
+        check(this.userId, String);
+        check(fields, {
+            title : String,
+            searchApi : String
+        });
 
-        if (!title) {
-            throw new Meteor.Error('invalid-title', 'You must add a title');
+        if (!fields.title || !fields.searchApi) {
+            throw new Meteor.Error('invalid-field', 'Add non empty field');
         }
 
-        board = {
-            boardName: title,
+        var board = {
+            boardName: fields.title,
             userId: Meteor.userId(),
             cards: [],
             created: new Date()
         };
-
 
         //insert to Boards collection
         var boardId = Boards.insert(board);
@@ -36,14 +39,14 @@ Boards.deny({
     update: function(userId, doc, fieldNames) {
 
         //if fieldnames return is more than 0, user is trying to edit fields more than just title(since they are removed with _.without)
-        return (_.without(fieldNames, 'title').length > 0);
+        return (_.without(fieldNames, 'title', 'searchApi').length > 0);
     }
 });
 
-validateBoard = function(title) {
+validateBoard = function(errors) {
     var error = {};
-    if(!title) {
-        error.title = "Please enter a non empty title";
+    if (!errors.title || !errors.searchApi) {
+        error.msg = "Please enter a non empty field";
         return error;
     }
 };
