@@ -1,9 +1,10 @@
 <template name="individualBoard">
     <li class="board">
-        <a href="{{pathFor 'individualKanban'}}" class="js-open-board highlight-icon">
+        {{#linkTo route="individualKanban"}}
             <span class="details">
                 <span class="board-list-item-name">{{boardName}}</span>
             </span>
-        </a>
+        {{/linkTo}}
+
     </li>
 </template>
