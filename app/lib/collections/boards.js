@@ -4,25 +4,26 @@ Meteor.methods({
     boardsInsert: function(fields) {
         //audit augment package
         check(this.userId, String);
-        check(fields, {
-            title : String,
-            searchApi : String
-        });
+        check(fields , String);
 
-        if (!fields.title || !fields.searchApi) {
+
+
+        if (!fields) {
+            console.log("error level 3");
             throw new Meteor.Error('invalid-field', 'Add non empty field');
         }
 
         var board = {
-            boardName: fields.title,
+            boardName: fields,
             userId: Meteor.userId(),
-            cards: [],
+            books: [],
             created: new Date()
         };
 
         //insert to Boards collection
         var boardId = Boards.insert(board);
 
+        console.log(boardId);
         //return the _id to client
         return {
             _id: boardId
@@ -38,14 +39,14 @@ Boards.allow({
 Boards.deny({
     update: function(userId, doc, fieldNames) {
 
-        //if fieldnames return is more than 0, user is trying to edit fields more than just title(since they are removed with _.without)
-        return (_.without(fieldNames, 'title', 'searchApi').length > 0);
+        //if fieldnames return is more than 0, user is trying to edit fields more than just title (since they are removed with _.without)
+        return (_.without(fieldNames, 'title').length > 0);
     }
 });
 
 validateBoard = function(errors) {
     var error = {};
-    if (!errors.title || !errors.searchApi) {
+    if (!errors) {
         error.msg = "Please enter a non empty field";
         return error;
     }
