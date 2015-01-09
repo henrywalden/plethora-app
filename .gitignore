@@ -4,6 +4,10 @@ node_modules
 *.log
 logs
 
+### keys ###
+config/env.sh
+config/settings.json
+
 ### WebStorm ###
 .idea/
 
