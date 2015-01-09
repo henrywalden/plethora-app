@@ -56,10 +56,9 @@ Router.route('/board/:_id', {
 });
 
 //amazon Search page
-Router.route('/searches/:_id?', {
-    name: 'amazonSearchPage',
-    waitOn: function() {Meteor.subscribe('searches') },
-    data: function() {
-        return [Searches.findOne(this.params._id), Searches.findOne(this.params.query)];
-    }
+Router.route('/search/:_id?', {
+    name: 'amazonSearchPage'
+    //data: function() {
+    //    return [Books.findOne(this.params._id), Books.findOne(this.params.query)];
+    //}
 });
