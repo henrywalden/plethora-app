@@ -34,18 +34,21 @@ Template.dropDownCreate.events({
                     return throwError(error.reason);
                 }
 
+                Session.set('queryParams', boardFields.searchApi);
+
+                Router.go('amazonSearchPage', {_id: result._id}, {query: 'q='+boardFields.searchApi});
+
                 //attempt to call searchInsert
-                Meteor.call('searchesInsert', boardFields.searchApi, function(error, result) {
-
-                    console.log(result.query);
-                    Session.set('queryParams', result.query);
-                    //display error to user and abort
-                    if (error) {
-                        return throwError(error.reason);
-                    }
-
-                    Router.go('amazonSearchPage', {_id: result._id}, {query: 'q='+result.query});
-                });
+                //Meteor.call('searchesInsert', boardFields.searchApi, function(error, result) {
+                //    console.log('searches Insert');
+                //    Session.set('queryParams', result.query);
+                //    //display error to user and abort
+                //    if (error) {
+                //        return throwError(error.reason);
+                //    }
+                //
+                //    Router.go('amazonSearchPage', {_id: result._id}, {query: 'q='+result.query});
+                //});
 
 
 
