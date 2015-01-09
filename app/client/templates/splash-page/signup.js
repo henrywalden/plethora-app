@@ -35,8 +35,7 @@ Template.signupForm.events({
             //check for empty form fields
             errors = validate(loginFields);
 
-        console.log(loginFields);
-        console.log(errors);
+
         if(errors.username || errors.email || errors.password || errors.verify){
             return Session.set('signUpErrors', errors);
         }
@@ -57,9 +56,7 @@ Template.signupForm.events({
                         return throwError(err.message);
                     }
                 } else {
-                    //todo route to kanban board
                     Router.go('/welcome');
-                    console.log('Congrats new Meteorite, you\'re in!');
 
                     //refresh Session state
                     return Session.set('signUpErrors', {})
