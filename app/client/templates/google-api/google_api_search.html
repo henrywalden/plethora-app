@@ -1,0 +1,22 @@
+<template name="amazonSearchPage">
+    {{#if searching}}
+        {{>loading}}
+    {{else}}
+        {{#if books.count}}
+            <div class="board-list gutter js-board-list clearfix">
+                {{#each books}}
+                    {{> book}}
+                {{/each}}
+            </div>
+        {{/if}}
+    {{/if}}
+</template>
+
+<template name="book">
+    <div class="col-md-3 col-sm-6 col-xs-12">
+        <span class="details">
+            <span class="board-list-item-name">{{title}}</span>
+        </span>
+        <img src="{{thumb}}" />
+    </div>
+</template>
