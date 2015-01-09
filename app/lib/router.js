@@ -53,10 +53,6 @@ Router.route('/board/:_id', {
 
 });
 
-
-
-
-
 //amazon Search page
 Router.route('/search/:_id?', {
     name: 'amazonSearchPage'
