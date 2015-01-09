@@ -38,22 +38,24 @@ Router.route('/reset-password', {
 
 
 Router.route('/welcome/', {
-    name: 'kanban'
+    name: 'kanban',
+    waitOn: function() { Meteor.subscribe('boards')}
 });
 
 
 //dynamic route to individual kanban according to id
 Router.route('/board/:_id', {
-    name: 'individualKanban',
-    waitOn: function() { Meteor.subscribe('boards'); },
+    name: 'individualKanban'
     //@todo add cards and event (indiv events)
     //waitOn: function() {
     //    return [Meteor.subscribe('cards', this.params._id), Meteor.subscribe('events', this.params._id)];
     //},
-    data: function() {
-        return Boards.findOne(this.params._id);
-    }
+
 });
+
+
+
+
 
 //amazon Search page
 Router.route('/search/:_id?', {
