@@ -3,20 +3,24 @@
         {{>loading}}
     {{else}}
         {{#if books.count}}
-            <div class="board-list gutter js-board-list clearfix">
+            <ul class="book-grid board-list gutter js-board-list clearfix">
                 {{#each books}}
                     {{> book}}
                 {{/each}}
-            </div>
+            </ul>
         {{/if}}
     {{/if}}
 </template>
 
 <template name="book">
-    <div class="col-md-3 col-sm-6 col-xs-12">
-        <span class="details">
-            <span class="board-list-item-name">{{title}}</span>
-        </span>
-        <img src="{{thumb}}" />
+    <div class="book-item col-md-3 col-sm-6 col-xs-12">
+        <div class="book-container">
+            <span class="book-title">
+                <span class="board-list-item-name">{{title}}</span>
+            </span>
+            <img src="{{thumb}}" class="book-thumb"/>
+
+            <input type="submit" value="Add to Read" class="btn btn-book btn-sm submit"/>
+        </div>
     </div>
 </template>

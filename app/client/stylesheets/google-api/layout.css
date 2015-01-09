@@ -1,0 +1,36 @@
+/*book grid*/
+.book-grid {
+    display:block;
+    margin: 0 auto;
+    padding-top: 20px;
+
+}
+
+/*book title*/
+.book-title {
+    padding: 9px 12px;
+    text-overflow: ellipsis;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+}
+
+/*book thumb*/
+.book-thumb {
+    display: block;
+    margin: 0 auto;
+}
+
+/*book btn*/
+.btn-book {
+    float: right;
+    margin: 15px;
+    position: absolute;
+    bottom: 15px;
+    right: 30px;
+}
+
+/*to prevent floating elements due google images' size differences*/
+.book-grid div:nth-child(9) {
+    /*clear:left;*/
+}

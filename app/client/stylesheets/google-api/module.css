@@ -1,0 +1,17 @@
+/*book item*/
+.book-container {
+    background-color: #D3C67E;
+    color: #555555;
+    height: 330px;
+    margin: 0 16px 16px 0;
+    font-size: 16px;
+    line-height: 22px;
+    border-radius: 5px;
+}
+
+/*book button*/
+.btn-book {
+    color: #fff;
+    background-color: #525252;
+    border-color: #4F4F4F;
+}
