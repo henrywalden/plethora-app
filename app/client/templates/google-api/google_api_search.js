@@ -8,7 +8,7 @@ Tracker.autorun(function() {
 });
 
 //too books helper search our Searches Collection and return current user's only searches
-Template.amazonSearchPage.helpers({
+Template.googleSearchPage.helpers({
     books:  function() {
         return Books.find();
     },
