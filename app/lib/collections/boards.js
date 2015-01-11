@@ -23,7 +23,6 @@ Meteor.methods({
         //insert to Boards collection
         var boardId = Boards.insert(board);
 
-        console.log(boardId);
         //return the _id to client
         return {
             _id: boardId

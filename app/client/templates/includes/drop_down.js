@@ -24,8 +24,6 @@ Template.dropDownCreate.events({
             //call boardInsert method to insert board title
             Meteor.call('boardsInsert', title, function(error, result) {
                 //display error to user and abort
-                console.log("error level 2");
-                console.log(error);
                 if (error) {
                     return throwError(error.reason);
                 }
