@@ -55,7 +55,7 @@ Router.route('/board/:_id', {
 
 //amazon Search page
 Router.route('/search/:_id?', {
-    name: 'amazonSearchPage'
+    name: 'googleSearchPage'
     //data: function() {
     //    return [Books.findOne(this.params._id), Books.findOne(this.params.query)];
     //}
