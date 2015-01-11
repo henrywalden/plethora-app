@@ -9,14 +9,9 @@
                 <span class="header-btn-text"><i class="fa fa-align-left"></i>Boards</span>
             </a>
         </div>
-        <div>
-            <div class="header-search">
-                <input class="header-search-input js-search-input js-disable-on-dialog" type="text" autocomplete="off" autocorrect="off" spellcheck="false" value="" />
-                <i class="fa fa-search"></i>
-                <!--<span class="header-search-icon icon-lg icon-search light js-search-icon js-search-focus"></span>-->
 
-            </div>
-        </div>
+        <!--search button-->
+        {{> search}}
 
         <div class="header-user">
             <button type="button" class="header-btn dropdown-toggle" id="dropdown-create" title="Add a new board">
@@ -49,4 +44,16 @@
         </div>
     </div>
 
+</template>
+
+<template name="search">
+    <div id="searchArea">
+        <form class="header-search">
+            <input id="newSearch" type="text" name="name" placeholder="Search for books" autofocus="">
+            <!--<i class="fa fa-search"></i>-->
+            <input type="submit" class="btn btn-primary btn-sm search-btn" value="Search">
+            <!--<span class="header-search-icon icon-lg icon-search light js-search-icon js-search-focus"></span>-->
+
+        </form>
+    </div>
 </template>
