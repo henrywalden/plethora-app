@@ -5,6 +5,9 @@ Template.header.created = function () {
     Session.set('showPopBoard', null);
     Session.set('showPopUser', null);
     Session.set('showPopNotifications', null);
+
+    //for queryParams on search bar
+    Session.set('queryParams', null);
 };
 
 //return username that has logged in
@@ -50,6 +53,46 @@ Template.header.events({
         Session.set('showPopUser', false);
         Session.set('showPopNotifications', false)
     }
+
 });
 
 
+//search template events
+Template.search.events({
+    'submit #searchArea' : function (e) {
+        e.preventDefault();
+
+        var search = $(e.currentTarget),
+            searchApi = search.find('#newSearch').val(),
+            errors = validateBoard(searchApi);
+
+
+
+        if(errors) {
+            return throwError(errors.msg)
+        } else {
+            //I want to search the google api straight away
+            //but I have add the boards insert as such, which involves
+            //adding the board title and then the search functionality
+            Session.set('queryParams', searchApi);
+
+
+            //call search insert to insert search to search collection
+            //if successful, route to template
+            Meteor.call('searchesInsert', searchApi, function(error, result){
+                if (error) {
+                    return throwError(error.reason);
+                }
+
+                Router.go('googleSearchPage', {_id: result._id}, {query: 'q='+searchApi});
+            });
+
+
+
+        }
+
+
+
+    }
+
+});
