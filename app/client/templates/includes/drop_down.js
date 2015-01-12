@@ -31,6 +31,9 @@ Template.dropDownCreate.events({
                 //route to boards page to display books
                 Router.go('individualKanban', {_id: result._id});
 
+                //to show search bar on individual board route
+                $('.userSearch').removeClass('none');
+
                 //attempt to call searchInsert
                 //Meteor.call('searchesInsert', boardFields.searchApi, function(error, result) {
                 //    console.log('searches Insert');

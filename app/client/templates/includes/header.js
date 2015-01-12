@@ -28,6 +28,14 @@ Template.header.helpers({
 
 //header events
 Template.header.events({
+    //show boards
+    'click .header-btn': function() {
+        Router.go('/welcome/');
+
+        //hide search button on boards' page
+        $('.userSearch').addClass('none');
+    },
+
     //to show dropdown create
     'click #dropdown-create': function(e, tmpl) {
         //e.stopPropagation();
@@ -84,7 +92,7 @@ Template.search.events({
                     return throwError(error.reason);
                 }
 
-                Router.go('googleSearchPage', {_id: result._id}, {query: 'q='+searchApi});
+                Router.go('googleSearchPage', {_id: result._id}, {query: 'q='+searchApi, hash: {}});
             });
 
 

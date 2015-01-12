@@ -1,18 +1,18 @@
 <template name="kanban">
-    <div class="window-module-title window-module-title-no-divider">
-        <i class="fa fa-group"></i>
-        <h3>My Plethora of Knowledge</h3>
+    <div id=kanban-main>
+        <div class="window-module-title window-module-title-no-divider">
+            <i class="fa fa-group"></i>
+            <h3>My Plethora of Knowledge</h3>
+        </div>
+        <!--{{#if newBoards}}-->
+            <p>No boards added yet</p>
+        <!--{{else}}-->
+            <ul class="board-list gutter js-board-list clearfix">
+                {{#each boards}}
+                    {{> individualBoard}}
+                {{/each}}
+            </ul>
+        <!--{{/if}}-->
     </div>
-    <!--{{#if newBoards}}-->
-        <p>No boards added yet</p>
-    <!--{{else}}-->
-    <ul class="board-list gutter js-board-list clearfix">
-        {{#each boards}}
-            {{> individualBoard}}
-        {{/each}}
-    </ul>
-
-
-    <!--{{/if}}-->
 
 </template>
