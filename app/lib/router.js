@@ -3,7 +3,7 @@ Router.configure({
     layoutTemplate: 'layout',
     loadingTemplate: 'loading',
     notFoundTemplate: 'notFound',
-    waitOn: function(){Meteor.subscribe('notifications');}
+    subscriptions: function(){Meteor.subscribe('notifications');}
 });
 
 
@@ -39,18 +39,23 @@ Router.route('/reset-password', {
 
 Router.route('/welcome/', {
     name: 'kanban',
-    waitOn: function() { Meteor.subscribe('boards')}
+    subscriptions : function() { Meteor.subscribe('boards')}
 });
 
 
 //dynamic route to individual kanban according to id
 Router.route('/board/:_id', {
-    name: 'individualKanban'
-    //@todo add cards and event (indiv events)
+    name: 'individualKanban',
     //waitOn: function() {
     //    return [Meteor.subscribe('cards', this.params._id), Meteor.subscribe('events', this.params._id)];
     //},
 
+    subscriptions: function() {
+        return Meteor.subscribe('singleBoard', this.params._id);
+    },
+    data: function() {
+        return Boards.findOne(this.params._id);
+    }
 });
 
 //amazon Search page
