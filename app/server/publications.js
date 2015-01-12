@@ -6,6 +6,11 @@ Meteor.publish('boards', function(id) {
     return Boards.find({ userId: this.userId });
 });
 
+Meteor.publish('singleBoard', function(id) {
+    check(id, String);
+    return Boards.find(id);
+});
+
 
 //publish searches to user
 Meteor.publish('booksSearch', function(query) {
