@@ -29,7 +29,7 @@ Template.header.helpers({
 //header events
 Template.header.events({
     //show boards
-    'click .header-btn': function() {
+    'click .home-route': function() {
         Router.go('/welcome/');
 
         //hide search button on boards' page
